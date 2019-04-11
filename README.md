@@ -1,2 +1,2 @@
 # InventoryManagement
-A mobile application for managing inventory for local shopkeepers. 
+A mobile application (flutter) for managing inventory for local shopkeepers. 
