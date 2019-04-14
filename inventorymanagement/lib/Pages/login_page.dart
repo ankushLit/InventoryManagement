@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'userDetailsPageOne.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
@@ -25,16 +26,6 @@ class _LoginPageState extends State<LoginPage> {
         fontSize: blockSize * 15,
       ),
     );
-    final googleButton = FlatButton(
-      onPressed: () {
-        print('google button pressed');
-      },
-      child: Image.asset(
-        'assets/googleIcon.png',
-        scale: blockSize * 0.5,
-        fit: BoxFit.fill,
-      ),
-    );
     final topField = Container(
         constraints: new BoxConstraints.expand(height: blockSize * 90),
         alignment: Alignment.center,
@@ -51,9 +42,10 @@ class _LoginPageState extends State<LoginPage> {
       autofocus: false,
       decoration: InputDecoration(
           hintText: 'Email',
-          contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          contentPadding: EdgeInsets.fromLTRB(
+              blockSize * 10, blockSize * 5, blockSize * 10, blockSize * 5),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(blockSize * 16))),
     );
 
     final passwordField = TextFormField(
@@ -61,26 +53,33 @@ class _LoginPageState extends State<LoginPage> {
       obscureText: true,
       decoration: InputDecoration(
           hintText: 'Password',
-          contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          contentPadding: EdgeInsets.fromLTRB(
+              blockSize * 10, blockSize * 5, blockSize * 10, blockSize * 5),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(blockSize * 16))),
     );
 
     final loginButton = Padding(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
+        padding: EdgeInsets.symmetric(vertical: blockSizeVertical * 2.8),
         child: Material(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(blockSize * 15),
           shadowColor: Color(0xffFFE082),
-          elevation: 5.0,
+          elevation: blockSize * 2.0,
           color: Color(0xffFFD54F),
           child: MaterialButton(
-            minWidth: 200.0,
-            height: 42.0,
+            minWidth: blockSize * 80,
+            height: blockSize * 10,
             onPressed: () {
               print('On Press of Login Called');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => UserDetailsPageOne()));
             },
             //color: Colors.purpleAccent,
-            child: Text('Login', style: TextStyle(color: Colors.white)),
+            child: Text('Login',
+                style:
+                    TextStyle(color: Colors.white, fontSize: blockSize * 4.5)),
           ),
         ));
 
@@ -89,34 +88,47 @@ class _LoginPageState extends State<LoginPage> {
       onPressed: () {},
     );
 
+    final googleButton = FlatButton(
+      onPressed: () {
+        print('google button pressed');
+      },
+      child: Image.asset(
+        'assets/googleIcon.png',
+        scale: blockSize * 0.5,
+        fit: BoxFit.fill,
+      ),
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             topField,
-            ListView(
-              shrinkWrap: true,
-              padding: EdgeInsets.only(left: 24.0, right: 24.0),
-              children: <Widget>[
-                SizedBox(
-                  height: 48.0,
-                ),
-                emailField,
-                SizedBox(
-                  height: 8.0,
-                ),
-                passwordField,
-                SizedBox(
-                  height: 24.0,
-                ),
-                loginButton,
-                forgotField,
-                SizedBox(
-                  height: 8.0,
-                ),
-                googleButton,
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                  left: blockSize * 5.71, right: blockSize * 5.71),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: blockSize * 11.43,
+                  ),
+                  emailField,
+                  SizedBox(
+                    height: blockSize * 1.90,
+                  ),
+                  passwordField,
+                  SizedBox(
+                    height: blockSize * 5.71,
+                  ),
+                  loginButton,
+                  forgotField,
+                  SizedBox(
+                    height: blockSize * 1.90,
+                  ),
+                  googleButton,
+                ],
+              ),
             ),
           ],
         ),
