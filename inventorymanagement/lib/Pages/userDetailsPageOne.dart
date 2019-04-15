@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'mainDisplayPage.dart';
 
 class UserDetailsPageOne extends StatefulWidget {
   @override
@@ -104,6 +105,9 @@ class _UserDetailsPageOneState extends State<UserDetailsPageOne> {
             setState(() {
               checkTab = false;
             });
+          } else {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DashBoardLayout()));
           }
         },
       ),
