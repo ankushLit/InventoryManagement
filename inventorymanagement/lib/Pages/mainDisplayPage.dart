@@ -39,7 +39,7 @@ class _DashBoardLayoutState extends State<DashBoardLayout> {
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
         BottomNavigationBarItem(
-            icon: Icon(Icons.gradient), title: Text('Report')),
+            icon: Icon(Icons.warning), title: Text('Active Orders')),
         BottomNavigationBarItem(
             icon: Icon(Icons.format_list_numbered), title: Text('Stock')),
       ],
