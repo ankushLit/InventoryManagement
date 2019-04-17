@@ -142,7 +142,7 @@ class OrderCard extends StatelessWidget {
       BuildContext ctx, double blockSize, double blockSizeVertical) {
     List<Widget> newItems = [Text('Item1'), Text('Item2'), Text('Item3')];
     final addMoreItemsButton = SizedBox(
-      width: blockSize * 16,
+      width: blockSize * 13,
       height: blockSizeVertical * 4,
       child: RaisedButton(
           onPressed: () {},
@@ -158,7 +158,7 @@ class OrderCard extends StatelessWidget {
           )),
     );
     final cancelButton = SizedBox(
-      width: blockSize * 16,
+      width: blockSize * 13,
       height: blockSizeVertical * 4,
       child: RaisedButton(
           onPressed: () {
