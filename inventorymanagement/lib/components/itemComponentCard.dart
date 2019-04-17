@@ -7,7 +7,6 @@ class ItemComponentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     final blockSize = width / 100;
     var priceRow = Padding(
       padding: EdgeInsets.all(blockSize * 3),

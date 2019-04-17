@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Tabs/home.dart';
-import 'Tabs/report.dart';
+import 'Tabs/activeOrders.dart';
 import 'Tabs/stock.dart';
 
 class DashBoardLayout extends StatefulWidget {
@@ -10,7 +10,7 @@ class DashBoardLayout extends StatefulWidget {
 
 class _DashBoardLayoutState extends State<DashBoardLayout> {
   int _currentIndex = 0;
-  final List<Widget> _children = [DashHome(), DashReport(), DashStock()];
+  final List<Widget> _children = [DashHome(), ActiveOrders(), DashStock()];
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;

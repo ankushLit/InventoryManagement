@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     800: Color(0xffFF8F00),
     900: Color(0xffFF6F00),
   };
-  MaterialColor customOrange = MaterialColor(0xffFFCA28, color);
+  final MaterialColor customOrange = MaterialColor(0xffFFCA28, color);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
